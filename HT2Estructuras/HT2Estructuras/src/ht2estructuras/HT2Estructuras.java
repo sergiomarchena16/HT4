@@ -4,6 +4,7 @@ package ht2estructuras;
 import java.io.*;
 import static java.lang.Double.NaN;
 import static java.lang.Double.isNaN;
+import java.util.Scanner;
 
 
 /**
@@ -18,10 +19,26 @@ public class HT2Estructuras {
      */
     public static void main(String[] args) throws FileNotFoundException, IOException 
     {
-         String linea;
-         Operacion opera = new Operacion();
+         String linea = null;
+         Scanner sc = new Scanner(System.in);
+         int opcion;
+         Stack stack = null;
          
+         Factory factory = new Factory();
+                 
         File archivo = new File ("C:\\Users\\Mafer\\Documents\\HT2Estructuras\\HT2Estructuras\\HT2Estructuras\\datos.txt");
+        
+        System.out.println("Elija una opcion: ");
+        System.out.println("1. ArrayList.");
+        System.out.println("2. Array.");
+        System.out.println("3. Listas.");
+        opcion = sc.nextInt();
+        
+        
+        stack = factory.getLista(opcion, linea);
+        Operacion opera = new Operacion(stack);
+        
+        
         
         
         /**

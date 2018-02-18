@@ -20,11 +20,47 @@ public abstract class abstractList<E> implements Lista<E> {
    {
       return size() == 0;
    }
+   
+   @Override
+    public void push(E item) {
+        addLast(item);
+    }
+
+    /**
+     * Elimina el último elemento
+     * @return método para eliminar el último elemento
+     */
+    @Override
+    public E pop() {
+        return removeLast();
+    }
+
+    /**
+     * Muestra el último elemento agregado a la lista
+     * @return último elemento
+     */
+    @Override
+    public E peek() {
+        return getLast();
+    }
+
+    /**
+     * Pone el tamaño como 0
+     * @return boolean de is empty
+     */
+    @Override
+    public boolean empty() {
+        return isEmpty();
+    }
+
+    /**
+     * Indica el tamaño del nodo
+     * @return count el tamaño
+     */
+    @Override
+    public int size() {
+        return 0;
+    }
   
-  public boolean contains(E value)
-  // pre: value is not null
-  // post: returns true iff list contains an object equal to value
-  {
-	return -1 != indexOf(value);
-  }
+  
 }

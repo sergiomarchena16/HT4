@@ -15,7 +15,7 @@ public class SinglyLinkedList<E> extends abstractList<E>
    protected int count; // list size
    protected Node<E> head; // ref. to first element
 
-   public SinglyLinkedList()
+   public SinglyLinkedList(String texto)
    // post: generates an empty list
    {
       head = null;
@@ -28,24 +28,7 @@ public class SinglyLinkedList<E> extends abstractList<E>
     return count;
   }
   
-  public void addFirst(E value)
-  // post: value is added to beginning of list
-  {
-     // note order that things happen:
-     // head is parameter, then assigned
-     head = new Node<E>(value, head);
-     count++;
-  }
-  
-
-  
-  public E getFirst()
-  // pre: list is not empty
-  // post: returns first value in list
-  {
-      return head.value();
-  }
-  
+   
   public void addLast(E value)
   // post: adds value to end of list
   {
@@ -84,11 +67,25 @@ public class SinglyLinkedList<E> extends abstractList<E>
 
     @Override
     public E getLast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return head.value();
+    }
+
+      
+
+    @Override
+    public E removeLast() {
+        Node<E> temp = head;
+        if(head.next()!=null){
+            head=head.next();
+        }else{
+            head=null;
+        }
+        count--;
+        return temp.value();
     }
 
     @Override
-    public void add(E value) {
+    public void addFirst(E value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -97,13 +94,5 @@ public class SinglyLinkedList<E> extends abstractList<E>
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public E get(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int indexOf(E value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 }

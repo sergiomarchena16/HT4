@@ -16,11 +16,13 @@ public class StackArrayList<E>
 {
 	protected ArrayList<E> data;
 
-	public StackArrayList()
+	public StackArrayList(String texto)
 	// post: constructs a new, empty stack
 	{
-		data = new ArrayList<E>();
+		data = new ArrayList<>();
 	}
+
+    
 
 	public void push(E item)
 	// post: the value is added to the stack

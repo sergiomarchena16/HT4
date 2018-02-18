@@ -15,7 +15,7 @@ public class StackList<E> implements Stack<E> {
     
     public StackList(){
         // post: constructs a new, empty stack
-        lista = new SinglyLinkedList();
+        
     }
 
     @Override

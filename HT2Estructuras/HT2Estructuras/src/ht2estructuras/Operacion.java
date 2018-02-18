@@ -9,10 +9,22 @@ import static java.lang.Double.NaN;
  * @version 02.02.2018
  */
 public class Operacion implements Calculadora {
-    Stack<Double> x = new StackArrayList<Double>();
+    private Stack<Double> x;
+    private Operacion instance;
     double d2;
     double n1,n2;
     
+    public Operacion(Stack tipo){
+        x = tipo;
+    }
+    public Operacion getInstance(Stack tipo){
+        if(instance == null){
+            instance = new Operacion(tipo);
+        } else {
+            System.out.println("No se puede");
+        }
+        return instance;
+    }
     @Override
     public double operar(String expresion) 
     {       
